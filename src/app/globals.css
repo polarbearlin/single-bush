@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* ─── Custom Theme ─── */
+@theme {
+  --color-charcoal: #1a1a1a;
+  --color-charcoal-light: #2a2a2a;
+  --color-mountain: #8a8a8a;
+  --color-mountain-light: #b0b0b0;
+  --color-mountain-mist: #d4d0cb;
+  --color-amber: #c4956a;
+  --color-amber-light: #d4a87a;
+  --color-amber-dark: #a67a50;
+  --color-cream: #f5f0eb;
+  --color-cream-dark: #ebe5dd;
+  --color-parchment: #faf7f3;
+  --font-serif: var(--font-cormorant), 'Noto Serif SC', 'Georgia', serif;
+  --font-sans: var(--font-inter), 'Noto Sans SC', system-ui, sans-serif;
+}
+
+/* ─── Base ─── */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-charcoal);
+  background: var(--color-parchment);
+}
+
+::selection {
+  background: var(--color-amber-light);
+  color: white;
+}
+
+/* ─── Typography ─── */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-mountain-mist);
+  border-radius: 3px;
+}
