@@ -6,6 +6,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/components/LanguageContext";
 import { useCart } from "@/components/CartContext";
+import { useShowcase } from "@/components/ShowcaseContext";
 
 export function Nav() {
   const pathname = usePathname();
@@ -13,6 +14,7 @@ export function Nav() {
 
   const { lang, setLang, dict } = useLanguage();
   const { totalItems, setIsOpen: setCartOpen } = useCart();
+  const { setIsOpen: setShowcaseOpen } = useShowcase();
 
   const links = [
     { href: "/products", label: dict.nav.products },
@@ -39,6 +41,12 @@ export function Nav() {
                 {link.label}
               </Link>
             ))}
+            <button 
+              onClick={() => setShowcaseOpen(true)}
+              className="transition-colors duration-300 hover:text-charcoal"
+            >
+              {dict.nav.showcase}
+            </button>
           </div>
 
           <button 
@@ -112,6 +120,16 @@ export function Nav() {
               </Link>
             ))}
             
+            <button
+              onClick={() => {
+                setShowcaseOpen(true);
+                setIsOpen(false);
+              }}
+              className="text-2xl font-serif tracking-widest uppercase text-mountain hover:text-charcoal"
+            >
+              {dict.nav.showcase}
+            </button>
+
             <button
               onClick={() => {
                 setLang(lang === "en" ? "zh" : "en");

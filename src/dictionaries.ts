@@ -5,6 +5,7 @@ export const dictionaries = {
       products: "The Collection",
       guide: "Brewing Guide",
       journal: "The Journal",
+      showcase: "Works",
     },
     home: {
       heroTitle: "Single\nBush",
@@ -260,6 +261,7 @@ export const dictionaries = {
       products: "典藏系列",
       guide: "冲泡指南",
       journal: "品牌志",
+      showcase: "作品空间",
     },
     home: {
       heroTitle: "隐丛\n单丛",
